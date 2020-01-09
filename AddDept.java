@@ -27,7 +27,7 @@ public class AddDept extends HttpServlet {
 		//retreiving data from html page
 		int deptNo=Integer.parseInt(request.getParameter("deptno"));
 		String deptName=request.getParameter("deptname");
-		String location=request.getParameter("location");
+		String location=request.getParameter("loca");
 		
 		//pass the received vales from html to Department class constructor
 		Department dept=new Department(deptNo,deptName,location);
@@ -37,6 +37,7 @@ public class AddDept extends HttpServlet {
 		
 		//function call to addDept()
 		int rows=deptemp.addDept(dept);
+		System.out.println(rows);
 		if(rows>0)
 			out.println("inserted");
 		else
